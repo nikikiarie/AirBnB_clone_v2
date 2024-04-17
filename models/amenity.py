@@ -12,7 +12,7 @@ from sqlalchemy.orm import relationship
 
 class Amenity(BaseModel, Base):
     """Amenity Class"""
-    if models.storage_t == 'db':
+    if models.st_s == 'db':
         __tablename__ = 'amenities'
         name = Column(String(128), nullable=False)
     else:
