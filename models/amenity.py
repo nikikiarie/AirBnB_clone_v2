@@ -4,4 +4,6 @@ from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    name = ""
+    """Amenity Class"""
+    __tablename__ = 'amenities'
+    name = Column(String(128), nullable=False)
