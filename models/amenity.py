@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class Amenity(BaseModel):
+class Amenity(BaseModel, Base):
     """Amenity Class"""
     __tablename__ = 'amenities'
     name = Column(String(128), nullable=False)
