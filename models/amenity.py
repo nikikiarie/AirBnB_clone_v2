@@ -9,5 +9,14 @@ from sqlalchemy.orm import relationship
 
 class Amenity(BaseModel, Base):
     """Amenity Class"""
-    __tablename__ = 'amenities'
-    name = Column(String(128), nullable=False)
+    if models.storage_t == 'db':
+        __tablename__ = 'amenities'
+        name = Column(String(128), nullable=False)
+    else:
+        name = ""
+
+
+    def __init__(self, *args, **kwargs):
+        """Initialize Amenities"""
+        super.__init__(*args, **kwargs)
+
