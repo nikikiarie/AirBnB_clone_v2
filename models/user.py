@@ -7,9 +7,9 @@ from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 import sqlalchemy
 
-class User(BaseModel):
+class User(BaseModel, Base):
     """This class defines a user by various attributes"""
-    if models.storage_t = 'db':
+    if models.st_s = 'db':
         __tablename__ : 'users'
         email = Column(String(128), nullable=False)
         password = Column(String(128), nullable=False)
