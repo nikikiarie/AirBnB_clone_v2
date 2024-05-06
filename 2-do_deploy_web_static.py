@@ -16,15 +16,15 @@ def do_deploy(archive_path):
     try:
         name_file = archive_path.split("/")[-1]
         name_archive = name_file.split(".")[0]
-        name_dir = "/data/web_static/releases"
+        name_dir = "/data/web_static/releases/"
         put(archive_path, '/tmp/')
         run('mkdir -p {}{}/'.format(name_dir, name_archive))
-        run('tar -xfz /tmp/{} -C {}{}/'.format(name_file, name_dir, name_archive))
+        run('tar -xzf /tmp/{} -C {}{}/'.format(name_file, name_dir, name_archive))
         run('rm /tmp/{}'.format(name_file))
         run('mv {0}{1}/web_static/* {0}{1}/'.format(name_dir, name_archive))
         run('rm -rf {}{}/web_static'.format(name_dir, name_archive))
         run('rm -rf /data/web_static/current')
         run('ln -s {}{}/ /data/web_static/current'.format(name_dir, name_archive))
-        retun True
+        return True
     except:
         return False
