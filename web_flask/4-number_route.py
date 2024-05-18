@@ -31,5 +31,11 @@ def python_text(text='is cool'):
     return 'Python ' + text.replace('_', ' ')
 
 
+@app.route('/number/<int:n>', strict_slashes=False)
+def numbr(n):
+    """return n is a number if n is a valid int"""
+    return str(n) + ' is a number'
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
