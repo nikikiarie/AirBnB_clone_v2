@@ -12,7 +12,7 @@ import sqlalchemy
 
 t = "%Y-%m-%dT%H:%M:%S.%f"
 
-if models.st_s = "db":
+if models.st_s == "db":
     Base = declarative_base()
 else:
     Base = object
@@ -23,7 +23,7 @@ class BaseModel:
     """A base class for all hbnb models"""
 
 
-    if models.st_s =="db":
+    if models.st_s == "db":
         id = Column(String(60), primary_key=True)
         created_at = Column(DateTime, default=datetime.utcnow)
         updated_at = Column(DateTime, default=datetime.utcnow)

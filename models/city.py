@@ -3,14 +3,14 @@
 from models.base_model import BaseModel, Base
 import models
 from os import getenv
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship
 import sqlalchemy
 
-class User(BaseModel, Base):
+class City(BaseModel, Base):
     """This class defines a user by various attributes"""
-    if models.st_s = 'db':
-        __tablename__ : 'cities'
+    if models.st_s == 'db':
+        __tablename__ = 'cities'
         state_id = Column(String(60), ForeignKey('states.id'), nullable=False)
         name = Column(String(128), nullable=False)
         places = relationship("Place", backref="cities")
@@ -20,5 +20,5 @@ class User(BaseModel, Base):
 
 
     def __init__(self, *args, **kwargs):
-        """Initialize User"""
+        """Initialize City"""
         super().__init__(*args, kwargs)

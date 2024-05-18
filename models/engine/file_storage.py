@@ -50,7 +50,7 @@ class FileStorage:
                     'Review': Review
                   }
         try:
-            with open(self__file_path, 'r') as f:
+            with open(self.__file_path, 'r') as f:
                 obj = json.load(f)
             for item in obj:
                 self.__objects[item] = classes[obj[item]["__class__"]](**obj[item])
