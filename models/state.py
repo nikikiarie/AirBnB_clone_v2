@@ -22,7 +22,7 @@ class State(BaseModel, Base):
         """initialize state"""
         super().__init__(*args, **kwargs)
 
-    if models.storage != "db":
+    if models.st_s != "db":
         @property
         def cities(self):
             """list of cities related to state"""
