@@ -42,7 +42,7 @@ class DBStorage:
         dict_new = {}
         for cl in classes:
             if cls is None or cls is cl or cls is classes[cl]:
-                obj = self.__self.__session.query(classes[cl]).all()
+                obj = self.__session.query(classes[cl]).all()
                 for ob in obj:
                     item = ob.__class__.__name__ + '.' + ob.id
                     dict_new[item] = ob
